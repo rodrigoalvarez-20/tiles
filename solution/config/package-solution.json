@@ -3,7 +3,7 @@
   "solution": {
     "name": "tiles-webpart",
     "id": "3624777a-337d-4b34-8384-5ab774c069aa",
-    "version": "1.5.5.0",
+    "version": "1.5.6.0",
     "includeClientSideAssets": true,
     "skipFeatureDeployment": false
   },

@@ -81,11 +81,11 @@ export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartPro
                     {
                       id: "url",
                       title: strings.urlField,
-                      type: this.customCollectionFieldType.fabricIcon
+                      type: this.customCollectionFieldType.string
                     },
                     {
                       id: "icon",
-                      title: strings.iconField,
+                      title: "Imagen/Icono",
                       type: this.customCollectionFieldType.string
                     },
                     {

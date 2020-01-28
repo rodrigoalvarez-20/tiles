@@ -5,7 +5,6 @@ import { ITilesProps } from '.';
 import { Tile } from './tile';
 import { WebPartTitle } from '@pnp/spfx-controls-react/lib/WebPartTitle';
 import { Placeholder } from '@pnp/spfx-controls-react/lib/Placeholder';
-import { List } from 'office-ui-fabric-react/lib/components/List';
 
 export class Tiles extends React.Component<ITilesProps, {}> {
 
