@@ -3,16 +3,14 @@ import * as ReactDom from 'react-dom';
 import * as strings from 'TilesWebPartStrings';
 import { Version } from '@microsoft/sp-core-library';
 import { BaseClientSideWebPart, IPropertyPaneConfiguration } from '@microsoft/sp-webpart-base';
-import { Tiles, ITilesProps, ITileInfo, LinkTarget } from './components';
+import { Tiles, ITilesProps, ITileInfo } from './components';
 
 export interface ITilesWebPartProps {
   collectionData: ITileInfo[];
-  tileHeight: number;
-  title: string;
+  //title: string;
 }
 
 export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartProps> {
-  private propertyFieldNumber;
   private propertyFieldCollectionData;
   private customCollectionFieldType;
 
@@ -20,13 +18,12 @@ export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartPro
     const element: React.ReactElement<ITilesProps> = React.createElement(
       Tiles,
       {
-        title: this.properties.title,
-        tileHeight: this.properties.tileHeight,
+        //title: this.properties.title,
         collectionData: this.properties.collectionData,
         displayMode: this.displayMode,
-        fUpdateProperty: (value: string) => {
+        /*fUpdateProperty: (value: string) => {
           this.properties.title = value;
-        },
+        }*/
         fPropertyPaneOpen: this.context.propertyPane.open
       }
     );
@@ -51,7 +48,6 @@ export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartPro
       '@pnp/spfx-property-controls/lib/PropertyFieldCollectionData'
     );
 
-    this.propertyFieldNumber = PropertyFieldNumber;
     this.propertyFieldCollectionData = PropertyFieldCollectionData;
     this.customCollectionFieldType = CustomCollectionFieldType;
   }
@@ -74,11 +70,6 @@ export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartPro
                   value: this.properties.collectionData,
                   fields: [
                     {
-                      id: "title",
-                      title: strings.titleField,
-                      type: this.customCollectionFieldType.string
-                    },
-                    {
                       id: "url",
                       title: strings.urlField,
                       type: this.customCollectionFieldType.string
@@ -87,28 +78,8 @@ export default class TilesWebPart extends BaseClientSideWebPart<ITilesWebPartPro
                       id: "icon",
                       title: "Imagen/Icono",
                       type: this.customCollectionFieldType.string
-                    },
-                    {
-                      id: "target",
-                      title: strings.targetField,
-                      type: this.customCollectionFieldType.dropdown,
-                      options: [
-                        {
-                          key: LinkTarget.parent,
-                          text: strings.targetCurrent
-                        },
-                        {
-                          key: LinkTarget.blank,
-                          text: strings.targetNew
-                        }
-                      ]
                     }
                   ]
-                }),
-                this.propertyFieldNumber('tileHeight', {
-                  key: "tileHeight",
-                  label: strings.TileHeight,
-                  value: this.properties.tileHeight
                 })
               ]
             }

@@ -1,62 +1,30 @@
 @import '~@microsoft/sp-office-ui-fabric-core/dist/sass/SPFabricCore.scss';
 
+.imageTile {
+  object-fit: contain;
+  width: "100%";
+  height:"10vmin";
+  text-Align:"center"; 
+  border-Radius:"12px";
+  //background-Size:"contain";
+  //background-position: center center;
+}
+
 .tile {
   @include ms-Grid-col;
   @include ms-sm4;
+  @include ms-md4;
+  @include ms-lg4;
   display: flex;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
   flex-basis: 130px;
 
-  a {
-    background-color: $ms-color-themePrimary;
-    box-sizing: border-box;
-    color: $ms-color-white;
-    display: block;
-    min-height: 123px;
-    //height: 123px;
-    overflow: hidden;
-    padding: 15px;
-    position: relative;
-    text-decoration: none;
-    width: 100%;
-
-    &:hover, &:visited {
-      color: $ms-color-white;
-      text-decoration: none;
-    }
-  }
-
-  .tileIcon {
-    @include ms-fontSize-su;
-    text-align: center;
-  }
-
   .tileTitle {
-    @include ms-fontSize-l;
-    color: white;
-    bottom: 0;
-    left: 0;
-    position: absolute;
-    right: 0;
+    color: black;
+    width: "100%";
+    font-size: "2vmin";
     text-align: center;
-    padding: 18px;
-  }
-
-  .overflow {
-    @include ms-fontSize-m;
-    background-color: rgba(0, 0, 0, 1);
-    box-sizing: border-box;
-    color: white;
-    height: 100%;
-    padding: 15px;
-    position: absolute;
-    transition: all 0.5s ease;
-    right: 0;
-    top: 100%;
-    left: 0;
-    display: flex;
-    align-items: flex-end;
-    
+    padding: 12px;
   }
 
 }

@@ -8,22 +8,17 @@ import { Placeholder } from '@pnp/spfx-controls-react/lib/Placeholder';
 
 export class Tiles extends React.Component<ITilesProps, {}> {
 
-  /**
-   * Default React remder method
-   */
   public render(): React.ReactElement<ITilesProps> {
     return (
       <div className={ styles.tiles }>
-        <WebPartTitle displayMode={this.props.displayMode}
-                      title={this.props.title}
-                      updateProperty={this.props.fUpdateProperty} />
+        <WebPartTitle displayMode={this.props.displayMode} />
 
         {
           this.props.collectionData && this.props.collectionData.length > 0 ? (
             <div className={styles.tilesList}>
               {
                 this.props.collectionData.map((tile, idx) => {
-                  return <Tile key={idx} item={tile} height={this.props.tileHeight} />
+                  return <Tile key={idx} item={tile} />
                 })
               }
             </div>

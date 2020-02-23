@@ -36,6 +36,7 @@
     "@types/webpack-env": "1.13.1",
     "@uifabric/utilities": "5.33.0",
     "react": "^16.8.5",
+    "react-app-polyfill": "^1.0.6",
     "react-aspect-ratio": "^1.0.41",
     "react-dom": "^16.8.5"
   },
